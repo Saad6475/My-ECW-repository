@@ -1,0 +1,81 @@
+{% extends 'blog/basic.html' %}
+
+{% block css %}   {% endblock %}
+
+{% block title %}  Blogpost  {% endblock %}
+
+    <!--{% load static %}
+    load static directory
+    <a href = "{%static 'blog/mystaticfile.text' %}">click here</a> -->
+    <!--    {% load static %}-->
+    <!--    <a href="{% static 'blog/textfile.text' %}">click </a>-->
+
+{% block body %}
+
+    <div class="container">
+
+
+  </div><div class="row mb-2">
+
+
+  </div>
+</div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h1 class="pb-4 my-2 font-italic border-bottom">
+        {{post.title}}
+      </h1>
+
+      <div class="blog-post">
+        <div class="mb-1 text-muted">{{post.pub_date}}</div>
+        <h2 class="blog-post-title my-4">{{post.head0}}</h2>
+
+        <p>{{post.chead0}}</p>
+
+        <h2>{{post.head1}}</h2>
+        <p>{{post.chead1}}</p>
+        <h3>{{post.head2}}</h3>
+        <p>{{post.chead2}}</p>
+        <!-- This code will show facebook like comment    -->
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-numposts="5"></div>
+
+
+      </div><!-- /.blog-post -->
+
+
+
+
+
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <!-- This code will show image of relevant post on blogpost page -->
+        <img src="/media/{{post.thumbnail}}" class="bd-placeholder-img my-3" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+
+        <h4 class="font-italic mt-4">About</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+
+
+      <div class="p-4 mt-1">
+        <h4 class="font-italic">Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="https://github.com/">GitHub</a></li>
+          <li><a href="https://github.com/">Twitter</a></li>
+          <li><a href="https://github.com/">Facebook</a></li>
+        </ol>
+        <!-- This code will show facebook like and share button  -->
+        <div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
+<br> <br>
+
+
+{% endblock %}
